@@ -28,7 +28,7 @@ mongoose
 
 app.use(
   cors({
-    origin: "https://julogpage.herokuapp.com",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
