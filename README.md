@@ -14,6 +14,8 @@
   <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/> &nbsp 
 </p>
 
+## V1.0.0
+
 ## :raising_hand:Introduce
 
 [**JULOG**](https://julogpage.herokuapp.com)
@@ -260,6 +262,13 @@
       ```
       이런식이라면 req.params.id값이 objectId가 아닌경우에 발생한다.
 
-## 리팩토링
+## V1.0.1
 
-- 1/10 : guestbook 라우터 mvc 패턴으로 변경, status 코드 추가, populate시 writer의 중요 데이터는 select로 전달하지 않음
+- node 서버에 route와 controller 부분 분리 및 에러처리 완료
+- frontend 공지 검색시 에러 수정
+- React presentational & container 디자인 패턴으로 수정
+
+## V1.0.2
+
+- node서버에 typescript 추가 예정
+- React에 Typescript 추가 예정

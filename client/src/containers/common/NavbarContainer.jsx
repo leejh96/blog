@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import NavbarComponent from "../../components/NavBarComponent/NavbarComponent";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,53 +7,65 @@ import { createStudy, deleteStudy } from "../../actions/StudyAction";
 import getCookie from "../../util/getCookie";
 
 function NavbarContainer() {
-  const onList = [
-    {
-      tag: "내 정보",
-      link: "/mypage",
-    },
-    {
-      tag: "로그아웃",
-      link: "#",
-    },
-  ];
+  const onList = useMemo(
+    () => [
+      {
+        tag: "내 정보",
+        link: "/mypage",
+      },
+      {
+        tag: "로그아웃",
+        link: "#",
+      },
+    ],
+    []
+  );
 
-  const offList = [
-    {
-      tag: "로그인",
-      link: "/login",
-    },
-    {
-      tag: "회원가입",
-      link: "/register",
-    },
-  ];
+  const offList = useMemo(
+    () => [
+      {
+        tag: "로그인",
+        link: "/login",
+      },
+      {
+        tag: "회원가입",
+        link: "/register",
+      },
+    ],
+    []
+  );
 
-  const boardList = [
-    {
-      tag: "공지사항",
-      link: "/notice/1",
-    },
-    {
-      tag: "방명록",
-      link: "/guestbook/1",
-    },
-  ];
+  const boardList = useMemo(
+    () => [
+      {
+        tag: "공지사항",
+        link: "/notice/1",
+      },
+      {
+        tag: "방명록",
+        link: "/guestbook/1",
+      },
+    ],
+    []
+  );
 
-  const categories = [
-    {
-      tag: "닉네임 변경",
-      link: "/mypage/nick",
-    },
-    {
-      tag: "비밀번호 변경",
-      link: "/mypage/password",
-    },
-    {
-      tag: "회원 탈퇴",
-      link: "/mypage/resign",
-    },
-  ];
+  const categories = useMemo(
+    () => [
+      {
+        tag: "닉네임 변경",
+        link: "/mypage/nick",
+      },
+      {
+        tag: "비밀번호 변경",
+        link: "/mypage/password",
+      },
+      {
+        tag: "회원 탈퇴",
+        link: "/mypage/resign",
+      },
+    ],
+    []
+  );
 
   const dispatch = useDispatch();
   const history = useHistory();

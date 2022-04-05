@@ -7,13 +7,17 @@
     "dev": "concurrently \"nodemon ./src/app.js\" \"npm run start --prefix client\"",
     "start": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
+    "backend": "tsc && ts-node dist/app.js"
   },
   "author": "Lee",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
     "concurrently": "^6.2.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0"
   },
   "dependencies": {
     "aws-sdk": "^2.985.0",
